@@ -7,15 +7,16 @@ export const Container = styled.View`
 `;
 
 export const Title = styled.Text`
- font-size: 20px;
+ font-size: 24px;
  color: #595959;
  margin: 10px 0;
+ font-weight: bold;
 `;
 
 export const CategoryContainer = styled.TouchableOpacity`
  width: 80%;
  height: 60px;
- border: 1px solid #595959;
+ border: 2px solid #ccc;
  justify-content: center;
  align-items: center;
  margin: 10px 0;
@@ -24,5 +25,6 @@ export const CategoryContainer = styled.TouchableOpacity`
 
 export const CategoryTitle = styled.Text`
  color: #595959;
- font-size: 17px;
+ font-size: 19px;
+ font-weight: bold;
 `;

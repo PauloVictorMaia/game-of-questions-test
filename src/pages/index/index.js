@@ -1,34 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Container, CategoryTitle, CategoryContainer, Title } from './styles';
 import DATA from '../../data/category-results';
 import { API } from '../../services/api';
 
 const Index = ({ navigation }) => {
-  const [url, setUrl] = useState('');
-  const [categoryData, setCategoryData] = useState([]);
-
-  useEffect(() => {
-   API.get(url).then((res) => {
-    setCategoryData(res.data.results);
-   })
-  },[url]);
-
-  function setCategory() {
-    navigation.push('QuestionScreen', {data: categoryData});
+  function setPath(url){
+    API.get(url).then((res) => {
+      navigation.push('QuestionScreen', {data: res.data.results});
+    })
   };
 
   return (
     <Container>
       <Title>Escolha a categoria desejada</Title>
       {DATA.map((category, index) => (
-          <CategoryContainer
-           key={index}
-           onPress={() => (
-              setUrl(category.ulr),
-              setCategory()
-           )}>
+        <CategoryContainer
+          key={index}
+          onPress={() => setPath(category.ulr)}>
             <CategoryTitle>{category.category}</CategoryTitle>
-          </CategoryContainer>
+        </CategoryContainer>
       ))}
     </Container>
   );
