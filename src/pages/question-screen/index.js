@@ -1,11 +1,22 @@
 import React, { useEffect, useState } from 'react';
-import { Container, CategoryText, CategoryQuestion, CategoryDifficulty, SelectItem, SelectText, ConfirmButton, ConfirmText, TopContainer } from './styles';
+import {
+  Container,
+  CategoryText,
+  CategoryQuestion,
+  CategoryDifficulty,
+  SelectItem,
+  SelectText,
+  ConfirmButton,
+  ConfirmText,
+  TopContainer,
+  ResultQuestion } from './styles';
 
 const QuestionScreen = ({ route, navigation }) => {
   const [numberQuestion, setNumberQuestion] = useState(0);
   const [correct, setCorrect] = useState(false);
   const [random, setRandom] = useState(0);
   const [result, setResult] = useState([]);
+  const [resultQuestion, setResultQuestion] = useState('');
   const data = route.params.data[numberQuestion];
   const IncorrectQuestions = data.incorrect_answers;
 
@@ -17,8 +28,18 @@ const QuestionScreen = ({ route, navigation }) => {
     if (numberQuestion <= 9 ){
       setNumberQuestion(numberQuestion + 1);
       setResult([...result, {difficulty: data.difficulty, correct: correct}]);
+      if (correct){
+        setResultQuestion('you got the previous question right');
+      } else {
+        setResultQuestion('you missed the previous question');
+      }
     } else {
-      navigation.push('Results',{data: result, category: data.category});
+        if (correct){
+          setResultQuestion('you got the previous question right');
+        } else {
+          setResultQuestion('you missed the previous question');
+        }
+        navigation.push('Results',{data: result, category: data.category});
      }
   }
 
@@ -47,6 +68,7 @@ const QuestionScreen = ({ route, navigation }) => {
       <ConfirmButton onPress={() => changeQuestion()}>
         <ConfirmText>Confirm</ConfirmText>
       </ConfirmButton>
+      <ResultQuestion>{resultQuestion}</ResultQuestion>
     </Container>
   );
 };

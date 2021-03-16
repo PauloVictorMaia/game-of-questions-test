@@ -49,6 +49,11 @@ export const CategoryQuestion = styled.Text`
  margin: 20px 0;
 `;
 
+export const ResultQuestion = styled.Text`
+  margin: 5px 0;
+  font-size: 16px;
+`;
+
 export const ConfirmButton = styled.TouchableOpacity`
  width: 50%;
  height: 50px;
