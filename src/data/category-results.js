@@ -1,26 +1,26 @@
 const DATA = [
   {
-    category: 'História',
+    category: 'History',
     ulr: 'api.php?amount=15&category=23&type=multiple',
   },
   {
-    category: 'Geografia',
+    category: 'Geography',
     ulr: 'api.php?amount=15&category=22&type=multiple',
   },
   {
-    category: 'Mitologia',
+    category: 'Mythology',
     ulr: 'api.php?amount=15&category=20&type=multiple',
   },
   {
-    category: 'Esportes',
+    category: 'Sports',
     ulr: 'api.php?amount=15&category=21&type=multiple',
   },
   {
-    category: 'Política',
+    category: 'Politics',
     ulr: 'api.php?amount=15&category=24&type=multiple',
   },
   {
-    category: 'Conhecimentos Gerais',
+    category: 'General Knowledge',
     ulr: 'api.php?amount=15&category=9&type=multiple',
   },
 ];

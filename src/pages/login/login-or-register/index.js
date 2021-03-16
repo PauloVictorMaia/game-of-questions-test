@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, ActionButton, ActionText, SpanText } from './styles';
-import SASIcon from '../../../assets/images/sas-image.svg'
+import SASIcon from '../../../assets/images/sas-image.svg';
 
 const LoginOrRegister = ({ navigation }) => {
   return (

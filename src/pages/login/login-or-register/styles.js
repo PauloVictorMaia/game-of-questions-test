@@ -18,7 +18,7 @@ export const ActionButton = styled.TouchableOpacity`
 
 export const ActionText = styled.Text`
  color: #fff;
- font-size: 16;
+ font-size: 16px;
  font-weight: bold;
 `;
 

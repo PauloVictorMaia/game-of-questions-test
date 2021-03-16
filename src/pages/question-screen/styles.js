@@ -25,12 +25,13 @@ export const CategoryDifficulty = styled.Text`
 
 export const SelectItem = styled.TouchableOpacity`
  width: 80%;
- height: 50px;
+ min-height: 50px;
  border-radius: 5px;
  justify-content: center;
  align-items: center;
  border: 1px solid #033464;
  margin: 15px 0;
+ padding: 10px;
 `;
 
 export const SelectText =  styled.Text`

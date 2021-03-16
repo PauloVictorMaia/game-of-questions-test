@@ -51,8 +51,8 @@ const UnloggedRoutes = () => {
       }}
       />
       <Stack.Screen
-       name="QuestionScreen" 
-       component={QuestionScreen} 
+       name="QuestionScreen"
+       component={QuestionScreen}
        options={{ headerShown: false }}
       />
       <Stack.Screen
