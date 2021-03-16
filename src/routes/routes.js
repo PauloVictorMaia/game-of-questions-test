@@ -1,8 +1,7 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import LoginOrRegister from '../pages/login/login-or-register';
-import Login from '../pages/login/login';
-import Register from '../pages/login/register';
+import SinIn from '../pages/login/sin-in';
+import ToPlay from '../pages/login/to-play';
 import Index from '../pages/index';
 import QuestionScreen from '../pages/question-screen';
 import Results from '../pages/results';
@@ -13,37 +12,20 @@ const UnloggedRoutes = () => {
   return (
     <Stack.Navigator initialRouteName="LoginOrRegister">
       <Stack.Screen
-       name="LoginOrRegister"
-       component={LoginOrRegister}
+       name="SinIn"
+       component={SinIn}
        options={{ headerShown: false }}
       />
       <Stack.Screen
-       name="Login"
-       component={Login}
-       options={{
-         title:'Sin In',
-         headerStyle:{
-           backgroundColor: '#033464',
-         },
-         headerTintColor: '#fff',
-       }}
-      />
-      <Stack.Screen
-       name="Register"
-       component={Register}
-       options={{
-         title: 'Sin Up',
-         headerStyle:{
-          backgroundColor: '#033464',
-        },
-        headerTintColor: '#fff',
-       }}
+       name="ToPlay"
+       component={ToPlay}
+       options={{ headerShown: false }}
       />
       <Stack.Screen
        name="Index"
        component={Index}
        options={{
-        title: 'Dev Mobile',
+        title: '',
         headerStyle:{
          backgroundColor: '#033464',
        },

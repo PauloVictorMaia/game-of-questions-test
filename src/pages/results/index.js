@@ -28,7 +28,7 @@ const Results = ({ route, navigation }) => {
         incorrectHard: incorrectHard.length,
         category: category,
       }));
-      navigation.navigate('Login');
+      navigation.navigate('ToPlay');
     } catch (err) {
       Alert('Did something wrong happen', err);
     }
