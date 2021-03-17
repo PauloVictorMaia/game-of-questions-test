@@ -1,7 +1,7 @@
 const DATA = [
   {
     category: 'History',
-    url: 'api.php?amount=40&category=23&type=multiple',
+    url: 'api.php?amount=50&category=23&type=multiple',
   },
   {
     category: 'Geography',
@@ -9,7 +9,7 @@ const DATA = [
   },
   {
     category: 'Mythology',
-    url: 'api.php?amount=50&category=20&type=multiple',
+    url: 'api.php?amount=40&category=20&type=multiple',
   },
   {
     category: 'Sports',

@@ -14,6 +14,14 @@ import {
 const QuestionScreen = ({ route, navigation }) => {
   const [numberQuestion, setNumberQuestion] = useState(0);
   const [random, setRandom] = useState(0);
+  const invalid = {
+    category: 'invalid',
+    difficulty: 'invalid',
+    correct_answer: 'invalid',
+    incorrect_answers: ['invalid', 'invalid', 'invalid'],
+    type: 'invalid',
+    question: 'invalid',
+  };
 
   const [result, setResult] = useState([]);
   const [resultQuestion, setResultQuestion] = useState('');
@@ -24,7 +32,7 @@ const QuestionScreen = ({ route, navigation }) => {
   const HardQuestions = allQuestions.filter((item) => {return item.difficulty === 'hard';});
   const [activityQuestions, setActivityQuestions] = useState(MediumQuestions);
 
-  const data = activityQuestions[numberQuestion];
+  const data = activityQuestions[numberQuestion] ? activityQuestions[numberQuestion] : invalid;
   const activityDifficutly = data.difficulty;
 
   const [correct, setCorrect] = useState(false);
@@ -93,7 +101,7 @@ const QuestionScreen = ({ route, navigation }) => {
          </SelectItem>
        }
        <ConfirmButton onPress={() =>  changeQuestion()}>
-         <ConfirmText>Confirm</ConfirmText>
+         <ConfirmText>{data === invalid ? 'Next' : 'Confirm'}</ConfirmText>
        </ConfirmButton>
        <ResultQuestion>{resultQuestion}</ResultQuestion>
      </Container>
