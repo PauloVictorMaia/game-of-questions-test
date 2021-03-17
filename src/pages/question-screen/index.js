@@ -18,15 +18,6 @@ const QuestionScreen = ({ route, navigation }) => {
   const [result, setResult] = useState([]);
   const [resultQuestion, setResultQuestion] = useState('');
 
-  const lastQuestion = result.filter((item, index) => {return index === result.length - 1;});
-  const penultimateQuestions = result.filter((item, index) => {return index === result.length - 2;});
-  const twoRightLast = lastQuestion.filter(() => {return lastQuestion[0].correct === true;});
-  const twoRightPenultimate = penultimateQuestions.filter(() => {return penultimateQuestions[0].correct === true;});
-  const twoWrongLast = lastQuestion.filter(() => {return lastQuestion[0].correct === false;});
-  const twoWrongPenultimate = penultimateQuestions.filter(() => {return penultimateQuestions[0].correct === false;});
-  const LastQuestionsTrue = twoRightLast.length + twoRightPenultimate.length;
-  const LastQuestionsFalse = twoWrongLast.length + twoWrongPenultimate.length;
-
   const allQuestions = route.params.data;
   const MediumQuestions = allQuestions.filter((item) => {return item.difficulty === 'medium';});
   const EasyQuestions = allQuestions.filter((item) => {return item.difficulty === 'easy';});
@@ -39,37 +30,46 @@ const QuestionScreen = ({ route, navigation }) => {
   const [correct, setCorrect] = useState(false);
   const IncorrectQuestions = data.incorrect_answers;
 
-  useEffect(() => {
-    setRandom((Math.random() * 10).toFixed());
-  },[numberQuestion]);
+  const lastQuestion = result.filter((item, index) => {return index === result.length - 1;});
+  const penultimateQuestions = result.filter((item, index) => {return index === result.length - 2;});
 
-  function changeQuestion(){
+  const twoRightLast = lastQuestion.filter(() => {return lastQuestion[0].correct === true;});
+  const twoRightPenultimate = penultimateQuestions.filter(() => {return penultimateQuestions[0].correct === true;});
+
+  const twoWrongLast = lastQuestion.filter(() => {return lastQuestion[0].correct === false;});
+  const twoWrongPenultimate = penultimateQuestions.filter(() => {return penultimateQuestions[0].correct === false;});
+  const LastQuestionsTrue = twoRightLast.length + twoRightPenultimate.length;
+  const LastQuestionsFalse = twoWrongLast.length + twoWrongPenultimate.length;
+
+
+
+  const sendFeedbackMessage = (message = {correct: 'you got the previous question right', wrong: 'you missed the previous question'}) => {
+    if (correct) return setResultQuestion(message.correct);
+     return setResultQuestion(message.wrong);
+  };
+
+  const setDifficutlyQuestion = () => {
+    if (LastQuestionsFalse > 0 && activityDifficutly === 'medium') return setActivityQuestions(EasyQuestions);
+    if (LastQuestionsTrue > 0 && activityDifficutly === 'medium') return setActivityQuestions(HardQuestions);
+    if (LastQuestionsTrue >= 1 && activityDifficutly === 'easy') return setActivityQuestions(MediumQuestions);
+    if (LastQuestionsFalse > 0 && activityDifficutly === 'hard') return setActivityQuestions(MediumQuestions);
+  };
+
+  const changeQuestion = () => {
     if (numberQuestion <= 9 ){
       setNumberQuestion(numberQuestion + 1);
       setResult([...result, {difficulty: data.difficulty, correct: correct}]);
-      if (correct){
-        setResultQuestion('you got the previous question right');
-      } else {
-        setResultQuestion('you missed the previous question');
-      }
+      sendFeedbackMessage();
     } else {
-        if (correct){
-          setResultQuestion('you got the previous question right');
-        } else {
-          setResultQuestion('you missed the previous question');
-        }
+        sendFeedbackMessage();
         navigation.push('Results',{data: result, category: data.category, date: JSON.stringify(new Date())});
      }
-     if (LastQuestionsFalse > 0 && activityDifficutly === 'medium'){
-      setActivityQuestions(EasyQuestions);
-     } else if (LastQuestionsTrue > 0 && activityDifficutly === 'medium') {
-      setActivityQuestions(HardQuestions);
-     } else if (LastQuestionsTrue >= 1 && activityDifficutly === 'easy'){
-       setActivityQuestions(MediumQuestions);
-     } else if (LastQuestionsFalse > 0 && activityDifficutly === 'hard'){
-       setActivityQuestions(MediumQuestions);
-     }
-  }
+     setDifficutlyQuestion();
+  };
+
+  useEffect(() => {
+    setRandom((Math.random() * 10).toFixed());
+  },[numberQuestion]);
 
    return (
      <Container>

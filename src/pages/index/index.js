@@ -43,7 +43,7 @@ const Index = ({ navigation }) => {
       {DATA.map((category, index) => (
         <CategoryContainer
           key={index}
-          onPress={() => setPath(category.ulr, category.category)}>
+          onPress={() => setPath(category.url, category.category)}>
             <CategoryTitle>{category.category}</CategoryTitle>
         </CategoryContainer>
       ))}
