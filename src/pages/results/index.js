@@ -6,6 +6,7 @@ import { Alert } from 'react-native';
 const Results = ({ route, navigation }) => {
   const data = route.params.data;
   const category = route.params.category;
+  const date = route.params.date;
   const corrects = data.filter((item) => {return item.correct === true;});
   const incorrects = data.filter((item) => {return item.correct !== true;});
   const correctEasy = data.filter((item) => {return item.correct === true && item.difficulty === 'easy';});
@@ -27,6 +28,7 @@ const Results = ({ route, navigation }) => {
         correctHard: correctHard.length,
         incorrectHard: incorrectHard.length,
         category: category,
+        date: date,
       }));
       navigation.navigate('ToPlay');
     } catch (err) {

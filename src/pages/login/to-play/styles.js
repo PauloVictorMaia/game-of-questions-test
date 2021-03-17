@@ -7,14 +7,14 @@ export const Container = styled.View`
 `;
 
 export const Title = styled.Text`
- font-size: 20;
+ font-size: 20px;
  color: #595959;
 `;
 
 export const DescriptionText = styled.Text`
  text-align: center;
  color: #595959;
- font-size: 15;
+ font-size: 15px;
  margin: 10px 5px;
 `;
 

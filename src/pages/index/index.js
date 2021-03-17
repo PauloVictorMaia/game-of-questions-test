@@ -10,22 +10,29 @@ const Index = ({ navigation }) => {
 
   useEffect(() => {
     const dataAsync = async () => {
-      const okAsync = await AsyncStorage.getAllKeys();
-      setKeys(okAsync);
-      selectedCategory('');
+      try {
+        const okAsync = await AsyncStorage.getAllKeys();
+        setKeys(okAsync);
+      } catch (err) {
+        console.log(err);
+      }
+      setSelectedCategory('');
     };
     dataAsync();
-  }, [selectedCategory]);
+  }, []);
 
-  const setPath = (url, category) => {
+  const setPath = async (url, category) => {
     const inactivityItem = keys.filter((item) => {return item === `@${category}`;});
 
     if (inactivityItem.length){
       setSelectedCategory('This category has already been answered');
     } else {
-      API.get(url).then((res) => {
+      try {
+        const res =  await API.get(url);
         navigation.push('QuestionScreen', {data: res.data.results});
-      });
+      } catch (err) {
+        console.log(err);
+      }
     }
   };
 
