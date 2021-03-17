@@ -6,19 +6,19 @@ Essa aplicação feita com React Native tem como objetivo facilitar o estudo da 
 
 - [React Navigation](https://reactnavigation.org/) - versão ^5.9.3;  O React Navigation surgiu da necessidade da comunidade do React Native de uma navegação de forma fácil de se usar e escrita toda em JavaScript;
 
--[react-navigation/stack](https://reactnavigation.org/) - versão ^5.14.3; é o tipo de navegação em pilha do react navigation;
+- [react-navigation/stack](https://reactnavigation.org/) - versão ^5.14.3; é o tipo de navegação em pilha do react navigation;
 
 - [React Native Gesture Handler](https://kmagiera.github.io/react-native-gesture-handler/) - versão ^1.10.3; API declarativa que permite a manipulação de toques e gestos no React Native;
 
 - [Axios](https://github.com/axios/axios) - versão ^0.21.1; O Axios é um cliente HTTP baseado em Promises para Browser e NodeJS;
 
--[Styled-components](https://styled-components.com/) - versão ^5.2.1; é um biblioteca que permite a utilização de estilos ao nível component;
+- [Styled-components](https://styled-components.com/) - versão ^5.2.1; é um biblioteca que permite a utilização de estilos ao nível component;
 
 -[react-native-community/async-storage](https://www.npmjs.com/package/@react-native-community/async-storage) - versão ^1.12.1; utilização do async-storage para persistência dos dados;
 
--[react-native-svg](https://github.com/react-native-svg/react-native-svg) - versão ^12.1.0; possíbilita a renderização de svg no react-native ;
+- [react-native-svg](https://github.com/react-native-svg/react-native-svg) - versão ^12.1.0; possíbilita a renderização de svg no react-native ;
 
--[react-native-svg-transformer](https://github.com/kristerkari/react-native-svg-transformer) - versão ^0.14.3; possibilita a utilização de svg como component;
+- [react-native-svg-transformer](https://github.com/kristerkari/react-native-svg-transformer) - versão ^0.14.3; possibilita a utilização de svg como component;
 
 
 # Começando
