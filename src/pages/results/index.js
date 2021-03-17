@@ -1,7 +1,7 @@
 import React from 'react';
 import AsyncStorage from '@react-native-community/async-storage';
-import { Container, Title, DescriptionText, SaveButton, SaveText } from './styles';
-import { Alert } from 'react-native';
+import { Container, Title, DescriptionText, SaveButton, SaveText, FeedBackContainer, FeedBackText } from './styles';
+import { Alert, View, Text } from 'react-native';
 
 const Results = ({ route, navigation }) => {
   const data = route.params.data;
@@ -19,14 +19,7 @@ const Results = ({ route, navigation }) => {
   const saveContentAndGoMenu = async () => {
     try {
       await AsyncStorage.setItem(`@${category}`, JSON.stringify({
-        corrects: corrects.length,
-        incorrects: incorrects.length,
-        correctEasy: correctEasy.length,
-        incorrectEasy: incorrectEasy.length,
-        correctMedium: correctMedium.length,
-        incorrectMedium: incorrectMedium.length,
-        correctHard: correctHard.length,
-        incorrectHard: incorrectHard.length,
+        data: data,
         category: category,
         date: date,
       }));
@@ -43,6 +36,13 @@ const Results = ({ route, navigation }) => {
       <DescriptionText>Hard: {`${correctHard.length} correct, `} {`${incorrectHard.length} wrong`}</DescriptionText>
       <DescriptionText>Medium: {`${correctMedium.length} correct, `} {`${incorrectMedium.length} wrong`}</DescriptionText>
       <DescriptionText>Easy: {`${correctEasy.length} correct, `} {`${incorrectEasy.length} wrong`}</DescriptionText>
+      {data.map((item, index) => (
+        <FeedBackContainer key={index}>
+          <FeedBackText>{`${index + 1} - `}</FeedBackText>
+          <FeedBackText>{item.difficulty}</FeedBackText>
+          <FeedBackText>{item.correct ? 'correct' : 'incorrect'}</FeedBackText>
+        </FeedBackContainer>
+      ))}
       <SaveButton onPress={() => saveContentAndGoMenu()}>
         <SaveText>save and goto menu</SaveText>
       </SaveButton>

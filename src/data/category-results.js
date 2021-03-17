@@ -5,15 +5,15 @@ const DATA = [
   },
   {
     category: 'Geography',
-    url: 'api.php?amount=40&category=22&type=multiple',
+    url: 'api.php?amount=50&category=22&type=multiple',
   },
   {
     category: 'Mythology',
-    url: 'api.php?amount=40&category=20&type=multiple',
+    url: 'api.php?amount=50&category=20&type=multiple',
   },
   {
     category: 'Sports',
-    url: 'api.php?amount=40&category=21&type=multiple',
+    url: 'api.php?amount=50&category=21&type=multiple',
   },
   {
     category: 'Politics',
@@ -21,7 +21,7 @@ const DATA = [
   },
   {
     category: 'General Knowledge',
-    url: 'api.php?amount=40&category=9&type=multiple',
+    url: 'api.php?amount=50&category=9&type=multiple',
   },
 ];
 

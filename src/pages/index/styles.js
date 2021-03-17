@@ -20,7 +20,7 @@ export const CategoryContainer = styled.TouchableOpacity`
  justify-content: center;
  align-items: center;
  margin: 10px 0;
- border-radius: 5px;
+ border-radius: 20px;
 `;
 
 export const CategoryTitle = styled.Text`
