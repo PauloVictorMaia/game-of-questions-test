@@ -20,7 +20,7 @@ Essa aplicação feita com React Native tem como objetivo facilitar o estudo da 
 
 - [react-native-svg-transformer](https://github.com/kristerkari/react-native-svg-transformer) - versão ^0.14.3; possibilita a utilização de svg como component;
 
--[testing-library/react-native](https://github.com/testing-library/native-testing-library) - versão ^7.2.0; é uma implementação da conhecida API de biblioteca de teste que funciona para React Native;
+- [testing-library/react-native](https://github.com/testing-library/native-testing-library) - versão ^7.2.0; é uma implementação da conhecida API de biblioteca de teste que funciona para React Native;
 
 
 # Começando
@@ -40,7 +40,7 @@ Essa aplicação feita com React Native tem como objetivo facilitar o estudo da 
 ### construção de uma api própria para consumo das questões, hoje é utilizada uma api pública que apresenta alguns problemas refletindo na necessidade de  soluções paliativas dentro da aplicação.
 
 ### desenvolvimento de uma lógica mais complexa para a gerar a ordem de perguntas de maneira mais randomica.
-### com o crescimento da aplicação será necessário a implementação de mais testes como testes de login e custom hooks, unitários, functionais..., E2E utilizando o Detox muito provavelmente. 
+### com o crescimento da aplicação será necessário a implementação de mais testes como testes de login e custom hooks, unitários, funcionais...,E2E.  
 
 
 
