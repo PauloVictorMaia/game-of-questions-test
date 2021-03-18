@@ -20,7 +20,7 @@ const QuestionScreen = ({ route, navigation }) => {
     correct_answer: 'invalid',
     incorrect_answers: ['invalid', 'invalid', 'invalid'],
     type: 'invalid',
-    question: 'invalid',
+    question: 'there was a problem pulling the question press next and go to the next',
   };
 
   const [result, setResult] = useState([]);
@@ -82,9 +82,6 @@ const QuestionScreen = ({ route, navigation }) => {
      <Container>
        <TopContainer>
          <CategoryText>Category: {data.category}</CategoryText>
-         {data.category === 'invalid' &&
-          <CategoryQuestion>there was a problem pulling the question press next and go to the next</CategoryQuestion>
-         }
          <CategoryDifficulty>{data.difficulty}</CategoryDifficulty>
        </TopContainer>
        <CategoryQuestion>{data.question}</CategoryQuestion>
