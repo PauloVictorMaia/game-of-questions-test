@@ -1,7 +1,7 @@
 import React from 'react';
 import AsyncStorage from '@react-native-community/async-storage';
 import { Container, Title, DescriptionText, SaveButton, SaveText, FeedBackContainer, FeedBackText } from './styles';
-import { Alert, View, Text } from 'react-native';
+import { Alert, ScrollView } from 'react-native';
 
 const Results = ({ route, navigation }) => {
   const data = route.params.data;
@@ -30,8 +30,12 @@ const Results = ({ route, navigation }) => {
   };
 
   return (
+    <ScrollView>
     <Container>
       <Title>{category}</Title>
+      {category === 'invalid' &&
+        <Title>an error occurred and invalid questions were selected, this result will not be stored</Title>
+      }
       <Title>Overall performance {`${corrects.length} correct, `} {`${incorrects.length} wrong`}</Title>
       <DescriptionText>Hard: {`${correctHard.length} correct, `} {`${incorrectHard.length} wrong`}</DescriptionText>
       <DescriptionText>Medium: {`${correctMedium.length} correct, `} {`${incorrectMedium.length} wrong`}</DescriptionText>
@@ -47,6 +51,7 @@ const Results = ({ route, navigation }) => {
         <SaveText>save and goto menu</SaveText>
       </SaveButton>
     </Container>
+    </ScrollView>
   );
 };
 

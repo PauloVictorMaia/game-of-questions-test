@@ -42,7 +42,7 @@ const Index = ({ navigation }) => {
       <CategoryTitle>{selectedCategory}</CategoryTitle>
       {DATA.map((category, index) => (
         <CategoryContainer
-          testID='category-list'
+          testID= "category-list"
           key={index}
           onPress={() => setPath(category.url, category.category)}>
             <CategoryTitle>{category.category}</CategoryTitle>

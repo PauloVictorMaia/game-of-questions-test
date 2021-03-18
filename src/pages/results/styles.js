@@ -9,6 +9,7 @@ export const Title = styled.Text`
  font-size: 19px;
  color: #595959;
  margin: 15px 0;
+ text-align: center;
 `;
 
 export const DescriptionText = styled.Text`
