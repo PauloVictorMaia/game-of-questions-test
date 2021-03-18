@@ -20,7 +20,7 @@ Essa aplicação feita com React Native tem como objetivo facilitar o estudo da 
 
 - [react-native-svg-transformer](https://github.com/kristerkari/react-native-svg-transformer) - versão ^0.14.3; possibilita a utilização de svg como component;
 
--[testing-library/react-native](https://github.com/testing-library/native-testing-library) - versão ^7.2.0; é uma implementação da conhecida API de biblioteca de teste que funciona para React Native;
+- [testing-library/react-native](https://github.com/testing-library/native-testing-library) - versão ^7.2.0; é uma implementação da conhecida API de biblioteca de teste que funciona para React Native;
 
 
 # Começando
